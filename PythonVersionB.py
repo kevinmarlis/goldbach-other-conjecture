@@ -1,4 +1,5 @@
 from math import sqrt
+from time import time
 
 def is_a_square(n: int) -> bool:
         return round(sqrt(n))**2 == n
@@ -31,4 +32,13 @@ def goldbach_fails(bound: int) -> [int]:
         oddNumber += 2
     return fails
 
+results = 0
 print(goldbach_fails(2))
+
+for _ in range(100):
+    start = time()
+    goldbach_fails(2)
+    end = time()
+    results += end - start
+
+print("Average time: ", results/100)

@@ -1,5 +1,4 @@
 from math import sqrt
-
 from time import time
 
 # Checks if an int is a perfect square by checking if the rounded square root
@@ -30,7 +29,8 @@ def primes_that_satisfy(g: int, primeNumbers: [int]) -> bool:
 
 # Maintains a list of ints that disprove goldbach's other conjecture by
 # iterating through odd composite numbers
-def goldbach(n: int) -> [int]:
+# Takes argument for number of fails to include in output list
+def goldbach_fails(n: int) -> [int]:
     fails = []
     primeNumbers = primes()
     oddNotPrimes = odd_composites()
@@ -42,9 +42,11 @@ def goldbach(n: int) -> [int]:
     return fails
 
 results = 0
+
+
 for _ in range(100):
     start = time()
-    goldbach(2)
+    goldbach_fails(2)
     end = time()
     results += end - start
 

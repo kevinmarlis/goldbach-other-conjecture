@@ -34,3 +34,5 @@ oddComposites = [n | n <- [3,5..], not (isPrime n)]
 -- 'take' to avoid an infinite list.
 goldbach :: [Integer]
 goldbach = [g | g <- oddComposites, null (primesThatSatisfy g)]
+
+--0.47 seconds, 290,031,288 bytes
