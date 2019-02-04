@@ -20,7 +20,7 @@ def primes() -> [int]:
     return [2] + [n for n in range(3, 6000, 2) if is_prime(n)]
 
 # Returns a list of odd composite numbers between 3 and 6000
-def odd_not_primes() -> [int]:
+def odd_composites() -> [int]:
     return [n for n in range(3, 6000, 2) if not is_prime(n)]
 
 # Returns whether or not there are any primes that satisfy goldbach's
@@ -33,7 +33,7 @@ def primes_that_satisfy(g: int, primeNumbers: [int]) -> bool:
 def goldbach(n: int) -> [int]:
     fails = []
     primeNumbers = primes()
-    oddNotPrimes = odd_not_primes()
+    oddNotPrimes = odd_composites()
 
     while len(fails) < n:
         for g in oddNotPrimes:

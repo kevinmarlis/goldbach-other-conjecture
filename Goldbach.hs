@@ -26,11 +26,11 @@ primesThatSatisfy g = [p | p <- takeWhile (< g) primes, isASquare((g-p) `div` 2)
 
 -- Returns a list of all odd numbers that are not prime. Will need to use
 -- takeWhile when calling to avoid an infinite list
-oddNotPrimes :: [Integer]
-oddNotPrimes = [n | n <- [3,5..], not (isPrime n)]
+oddComposites :: [Integer]
+oddComposites = [n | n <- [3,5..], not (isPrime n)]
 
 -- Returns a list of numbers that disprove Goldbach's other conjecture. Only two
 -- numbers are known to disprive (5777, 5993) but function needs to be called using
 -- 'take' to avoid an infinite list.
 goldbach :: [Integer]
-goldbach = [g | g <- oddNotPrimes, null (primesThatSatisfy g)]
+goldbach = [g | g <- oddComposites, null (primesThatSatisfy g)]
