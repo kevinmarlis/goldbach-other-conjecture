@@ -44,10 +44,10 @@ def goldbach_fails(n: int) -> [int]:
 results = 0
 
 
-for _ in range(100):
+for _ in range(10):
     start = time()
     goldbach_fails(2)
     end = time()
     results += end - start
 
-print(results/100)
+print(results/10)

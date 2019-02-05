@@ -4,13 +4,10 @@ from time import time
 def is_a_square(n: int) -> bool:
         return round(sqrt(n))**2 == n
 
-# Checks an integer to see if it is prime or not by
 def is_prime(n: int) -> bool:
     if n % 2 == 0 and n > 2:
         return False
-    # range starts at 3, increments by 2, and ends at 1 greater than the int
-    # value of the square root of the checked number (range is not inclusive
-    # for the ending value). Anything with a remainder of 0 will return False
+    # Anything with a remainder of 0 will return False
     return all(n % i for i in range(3, int(sqrt(n)) + 1, 2))
 
 # takes argument for number of fails to include in output list
@@ -32,13 +29,14 @@ def goldbach_fails(bound: int) -> [int]:
         oddNumber += 2
     return fails
 
-results = 0
-print(goldbach_fails(2))
+print("Goldbach failures: ", goldbach_fails(2))
 
-for _ in range(100):
+# Time testing using the average of 10 trials
+results = 0
+for _ in range(10):
     start = time()
     goldbach_fails(2)
     end = time()
     results += end - start
 
-print("Average time: ", results/100)
+print("Average time: ", results/10)
