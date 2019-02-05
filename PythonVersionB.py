@@ -39,4 +39,4 @@ for _ in range(10):
     end = time()
     results += end - start
 
-print("Average time: ", results/10)
+print("Average time: ", round(results/10, 3))
